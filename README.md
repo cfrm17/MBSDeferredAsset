@@ -9,7 +9,7 @@ The introduction of interest rate dependent prepayments (and hence cash flows) r
 
 Firstly, we will review the basic equations governing cash flows from the MBS. The mortgage payment in month n made by the mortgagee is provided. For the MBS, rn is the weighted average interest rate of mortgages in the pool, and this value changes during the life of the MBS as mortgages prepay. 
 
-The MBS pay a fixed coupon cn, specified by the contract. The model values the difference between the actual interest payments (see https://finpricing.com/lib/FiBondCoupon.html) based on rn and cn, minus a fixed servicing of 25 bps. 
+The MBS pay a fixed coupon cn, specified by the contract. The model values the difference between the actual interest payments based on rn and cn, minus a fixed servicing of 25 bps. 
 
 We then simply present value these cashflows to arrive at a valuation. The discount curve is the CAD swap curve, with spot rates and simple compounding for the 1 year and under term points, and swap rates for longer terms
 
@@ -17,5 +17,6 @@ For the variable rate pools, we need to specify what rn and cn are. These rates 
 
 For the future months, the model calculates the one month forward rates, and “models” the prime rate as 1.75% above that forward rate. We make the same assumption that the prepayments are primarily refinances and not partial prepayments. This means that the prepayments effectively reduce the cash flows, not the amortization of the MBS. However, there is a crucial difference with the submitted model and conventional MBS models, in that the model assumes the prepayments are not rate dependent. This greatly simplifies the model, since a dynamic model is not required.
 
+Reference:
 
-
+https://finpricing.com/FinPricing-ProductBrochure.pdf
